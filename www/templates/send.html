@@ -1,0 +1,35 @@
+<ion-view title="Send" id="page4">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="name">
+                <span class="input-label">NAME</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-input" name="surnames">
+                <span class="input-label">SURNAMES</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-select" name="country">
+                <span class="input-label">COUNTRY</span>
+                <select>
+                    <option>ESPAIN</option>
+                    <option>USA</option>
+                    <option>ITALY</option>
+                    <option>FRANCE</option>
+                    <option>GERMANY</option>
+                </select>
+            </label>
+            <label class="item item-input" name="email">
+                <span class="input-label">EMAIL</span>
+                <input type="email" placeholder="">
+            </label>
+            <ion-toggle toggle-class="toggle-energized" ng-checked="true" name="ok">ok</ion-toggle>
+        </form>
+        <div id="send-markdown2" style="color:#000000;">
+            <p>Some friendly
+                <strong>markdown</strong>
+            </p>
+        </div>
+        <button id="send-button6" style="border-radius:25px 25px 25px 25px;" class="button button-positive  button-block">Tap me!</button>
+    </ion-content>
+</ion-view>
