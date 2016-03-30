@@ -1,5 +1,4 @@
-#home { 
-
+#home {
 	background-image: url("../img/homebg.png");
 	background-repeat: no-repeat;
     background-size: contain;
@@ -19,10 +18,87 @@
 
 #navbar {
 	background-color: #666666;
-	height: 47px;
-	position: fixed;
+	height: 100px;
+	position: absolute;	
 	bottom: 0;
 	left: 0;
 	width: 100%;
-
 }
+#navbar div.flex{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+#navbar a.navitem{
+	-webkit-flex: 1 1 auto;
+    flex: 5;
+ 	padding-top: 20px;
+ 	text-align: center; 	
+	margin: 0;
+	border-right:1px solid #c8c8c8;
+	height: 100px;
+ }
+#navbar a.navitem.current{
+	background-color: #f0ab00;
+	border: 0;
+ }
+ #navbar a.navitem.disabled{
+	background-color: #dddddd;
+ }
+#navbar a.navitem:last-child{
+	border:0 !important;
+ }
+ 
+ #navbar div h2 {
+ 	color: #fff;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 0
+ }
+
+ #navbar a.navitem div.home{
+ 	width: 100%;
+ 	height: 44px;
+ 	background: url('../img/home-ico.png') center center no-repeat ;
+ }
+  #navbar a.navitem div.camera{
+ 	width: 100%;
+ 	height: 44px;
+ 	background: url('../img/camera-ico.png') center center no-repeat ;
+ }
+  #navbar a.navitem div.flash{
+ 	width: 100%;
+ 	height: 44px;
+ 	background: url('../img/flashico.png') center center no-repeat ;
+ }
+  #navbar a.navitem div.send{
+ 	width: 100%;
+ 	height: 44px;
+ 	background: url('../img/send.png') center center no-repeat ;
+ }
+  #navbar a.navitem div.share{
+ 	width: 100%;
+ 	height: 44px;
+ 	background: url('../img/share.png') center center no-repeat ;
+ }
+
+
+ #navbar a.navitem.disabled div.flash{
+ 	background: url('../img/flashico2.png') center center no-repeat ;
+ }
+  #navbar a.navitem.disabled div.send{
+ 	background: url('../img/send2.png') center center no-repeat ;
+ }
+  #navbar a.navitem.disabled div.share{
+ 	background: url('../img/share2.png') center center no-repeat ;
+ }
+
+ #navbar a.navitem.disabled h2 {
+ 	color: #999999;
+ }
+
+ 

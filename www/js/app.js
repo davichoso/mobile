@@ -23,9 +23,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 .config(function($ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 })
-.directive("contenido", function() {
+.directive("navbar", function() {
   return {
       restrict: "E",
-      templateUrl: "partials/contenido.html"
+      templateUrl: "partials/navbar.html"
   }            
 })
