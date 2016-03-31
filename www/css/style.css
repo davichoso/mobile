@@ -1,3 +1,68 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('opensans-regular-webfont.eot');
+    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular-webfont.woff2') format('woff2'),
+         url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype'),
+         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+
+font-family: Flaticon;
+font-size: 20px;
+font-style: normal;
+text-align: center;
+}
+
+.flaticon-arrows:before { content: "\f100"; }
+.flaticon-black:before { content: "\f101"; }
+.flaticon-home:before { content: "\f102"; }
+.flaticon-paper:before { content: "\f103"; }
+.flaticon-people:before { content: "\f104"; }
+.flaticon-signs:before { content: "\f105"; }
+.flaticon-social:before { content: "\f106"; }
+.flaticon-social-1:before { content: "\f107"; }
+.flaticon-social-2:before { content: "\f108"; }
+.flaticon-social-3:before { content: "\f109"; }
+.flaticon-technology:before { content: "\f10a"; }
+
+.flaticon-signs
+{ 
+  font-weight: bold;
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);    /* Gecko */
+  -o-transform: scaleX(-1);      /* Opera */
+  -webkit-transform: scaleX(-1); /* Webkit */
+  transform: scaleX(-1);         /* Standard */
+  filter: FlipH;                 /* IE 6/7/8 */
+}
+
+/*****************************************************************************/
+
 #home {
 	background-image: url("../img/homebg.png");
 	background-repeat: no-repeat;
@@ -7,18 +72,19 @@
 }
 
 #home #home-button
-{ background-color: #f0ab00;
+{   
+	background-color: #f0ab00;
 	position: fixed;
 	bottom: 0;
 	margin: 0;
 	border-radius: 0;
 	width: 100%;
 	color: white;
+	min-height: 54px;
 }			
 
 #navbar {
 	background-color: #666666;
-	height: 100px;
 	position: absolute;	
 	bottom: 0;
 	left: 0;
@@ -36,12 +102,13 @@
 #navbar a.navitem{
 	-webkit-flex: 1 1 auto;
     flex: 5;
- 	padding-top: 20px;
+ 	padding: 5px 0;
  	text-align: center; 	
 	margin: 0;
 	border-right:1px solid #c8c8c8;
-	height: 100px;
- }
+	text-transform: none;
+	text-decoration: none;
+}
 #navbar a.navitem.current{
 	background-color: #f0ab00;
 	border: 0;
@@ -55,50 +122,25 @@
  
  #navbar div h2 {
  	color: #fff;
- 	font-size: 16px;
+ 	font-size: 0.8em;
  	text-align: center;
- 	margin: 0
+ 	margin: 0;
+ 	font-family: 'OpenSans';
+ }
+ #navbar a.navitem div
+ {
+ 	width: 100%;
  }
 
- #navbar a.navitem div.home{
- 	width: 100%;
- 	height: 44px;
- 	background: url('../img/home-ico.png') center center no-repeat ;
- }
-  #navbar a.navitem div.camera{
- 	width: 100%;
- 	height: 44px;
- 	background: url('../img/camera-ico.png') center center no-repeat ;
- }
-  #navbar a.navitem div.flash{
- 	width: 100%;
- 	height: 44px;
- 	background: url('../img/flashico.png') center center no-repeat ;
- }
-  #navbar a.navitem div.send{
- 	width: 100%;
- 	height: 44px;
- 	background: url('../img/send.png') center center no-repeat ;
- }
-  #navbar a.navitem div.share{
- 	width: 100%;
- 	height: 44px;
- 	background: url('../img/share.png') center center no-repeat ;
- }
+#navbar a.navitem i {
+	color: #fff !important;
+}
 
-
- #navbar a.navitem.disabled div.flash{
- 	background: url('../img/flashico2.png') center center no-repeat ;
- }
-  #navbar a.navitem.disabled div.send{
- 	background: url('../img/send2.png') center center no-repeat ;
- }
-  #navbar a.navitem.disabled div.share{
- 	background: url('../img/share2.png') center center no-repeat ;
- }
-
- #navbar a.navitem.disabled h2 {
- 	color: #999999;
+#navbar a.navitem div {
+	color: #fff !important;
+}
+ #navbar a.navitem.disabled h2,#navbar a.navitem.disabled i, #navbar a.navitem.disabled div {
+ 	color: #999999 !important;
  }
 
  
