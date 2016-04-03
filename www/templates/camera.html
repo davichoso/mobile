@@ -1,7 +1,21 @@
-<ion-view title="Camera" id="page2">
-    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
-        <button ng-click='takePicture()' class="button button-positive button-block">CAMERA</button>
-        <button ng-click='selectPicture()' class="button button-positive button-block">GALLERY</button>		
+<ion-view id="cam" animation="no-animation">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="body">
+    	
+		<section class="cont">
+    	<div class="block tcenter">
+			<button ng-click='takePicture()' class="button">
+			<i class="flaticon-technology"></i>	&nbsp;CAMERA </button>
+    	</div>
+
+    	<div class="block tcenter">        
+        	<button onclick="document.getElementById('uploader').click()" class="button">
+         	<i class="flaticon-picture"></i> &nbsp;UPLOAD
+        </button>        
+        </div>
+		<input id="uploader" type="file" class="upload" style="display:none;" fileread="vm.uploadme"/>
+
+		</section>
+
         <navbar></navbar>
     </ion-content>
 </ion-view>

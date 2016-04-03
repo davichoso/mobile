@@ -7,7 +7,22 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives','ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(['$ionicPlatform','$rootScope','$location',function($ionicPlatform,$rootScope,$location) {
+  
+  if (localStorage.image) {
+            $rootScope.image = localStorage.image;
+  }
+
+  if (localStorage.step) {
+            $rootScope.step = localStorage.step;
+  }
+  else
+  {
+    $rootScope.step = 1;
+    localStorage.step = 1;
+  }
+
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,13 +34,46 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       StatusBar.styleDefault();
     }
   });
-})
+
+  $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams)
+  { 
+    $rootScope.state = toState.name;   
+  })
+
+}])
 .config(function($ionicConfigProvider) {
-    $ionicConfigProvider.tabs.position('bottom');
+
+    
+    $ionicConfigProvider.views.transition('none');
+
 })
 .directive("navbar", function() {
   return {
       restrict: "E",
-      templateUrl: "partials/navbar.html"
+      templateUrl: "partials/navbar.html",
+      replace: true
   }            
 })
+.directive("fileread", ['$rootScope','$location',function ($rootScope,$location) {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {                       
+                        $rootScope.image = loadEvent.target.result;
+                        localStorage.image = $rootScope.image;
+                        localStorage.step = 3;
+                        $rootScope.step = 3;
+                        $location.path('/filters');
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+                //console(changeEvent.target.files[0]);
+            });
+        }
+    }
+}])

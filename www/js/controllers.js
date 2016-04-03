@@ -1,8 +1,8 @@
 angular.module('app.controllers', [])
   
 .controller('cameraCtrl', function($scope,$rootScope,$cordovaCamera) {
-$rootScope.step=1;
-
+$rootScope.step=2;
+localStorage.step = 2;
 
 $scope.takePicture = function()
 {
@@ -28,28 +28,15 @@ $scope.takePicture = function()
 
 	  }, false);
 }
-
-
-$scope.selectPicture = function()
-{
-	
-
-}
-
-
-
-
-
-
 })
    
 .controller('filtersCtrl', function($scope,$rootScope,$location) {
-if($rootScope.step<2)
+$rootScope.step=3;
+localStorage.step = 3;	
+if(!$rootScope.image)
 {
-	$location.path('/tab/camera');
+	$location.path('/camera');
 }
-
-
 })
    
 .controller('sendCtrl', function($scope) {

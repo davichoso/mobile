@@ -43,12 +43,13 @@ text-align: center;
 .flaticon-home:before { content: "\f102"; }
 .flaticon-paper:before { content: "\f103"; }
 .flaticon-people:before { content: "\f104"; }
-.flaticon-signs:before { content: "\f105"; }
+.flaticon-picture:before { content: "\f105"; }
 .flaticon-social:before { content: "\f106"; }
 .flaticon-social-1:before { content: "\f107"; }
 .flaticon-social-2:before { content: "\f108"; }
-.flaticon-social-3:before { content: "\f109"; }
+.flaticon-social-media:before { content: "\f109"; }
 .flaticon-technology:before { content: "\f10a"; }
+.flaticon-signs:before { content: "\f10b"; }
 
 .flaticon-signs
 { 
@@ -60,6 +61,7 @@ text-align: center;
   transform: scaleX(-1);         /* Standard */
   filter: FlipH;                 /* IE 6/7/8 */
 }
+
 
 /*****************************************************************************/
 
@@ -143,4 +145,42 @@ text-align: center;
  	color: #999999 !important;
  }
 
- 
+#cam .body { background-color: #333333; padding: 0;
+display: flex; align-items: center; justify-content: center; }
+
+#cam .cont { background-image: url('../img/bg2.png'); width: 100%; 
+background-repeat: no-repeat; background-position: center; padding: 15% 0; background-size: 100%; }
+#cam .tcenter { text-align: center; margin-bottom: 20px; }
+#cam .tcenter button { width: 300px; border-radius: 25px;  background-color: #f0ab00; color: #fff; }
+#cam .tcenter button.activated { background-color: #999999; }
+
+
+#filter { background-color: #333333 }
+#filter #cont { width: 100%;  height: 100%; display: flex; align-items: center; justify-content: center; }
+#filter #cont #frame { position: relative;   }
+#filter #cont #frame img { width: 100%; top: 0; left: 0;}
+
+
+#filter #opts { position: absolute; bottom: 46px; width: 100% }
+
+#filter #opts .flex {
+background-color: #f0ab00;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+flex-direction: row;
+}
+
+
+
+
+#filter #opts .flex > div { flex: 8; height: 40px; text-align: center; padding: 4px   }
+#filter #opts .flex > div > div.cont { background-color: #666666; height: 100%; background-size: 100%; background-position: center; background-repeat: no-repeat;}
+#filter #opts .flex > div > div.wwr { background-image: url('../img/WhiteWomanRight.png');}
+#filter #opts .flex > div > div.wwl { background-image: url('../img/WhiteWomanLeft.png');}
+#filter #opts .flex > div > div.iwr { background-image: url('../img/IndianWomanRight.png');}
+#filter #opts .flex > div > div.iwl { background-image: url('../img/IndianWomanLeft.png');}
+#filter #opts .flex > div > div.bwr { background-image: url('../img/BlackWomanRight.png');}
+#filter #opts .flex > div > div.bwl { background-image: url('../img/BlackWomanLeft.png');}

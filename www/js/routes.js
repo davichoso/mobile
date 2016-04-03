@@ -33,16 +33,12 @@ angular.module('app.routes', ['ionicUIRouter'])
     templateUrl:'templates/home.html'
   })
 
-  .state('tabsController.filters', {
+  .state('filters', {
     url: '/filters',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/filters.html',
-        controller: 'filtersCtrl'
-      }
-    }
+    templateUrl: 'templates/filters.html',
+    controller: 'filtersCtrl'
   })
-
+  
   .state('tabsController.send', {
     url: '/send',
     views: {

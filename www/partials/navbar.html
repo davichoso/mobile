@@ -1,22 +1,22 @@
 <div id="navbar">
 	<div class="flex">
-		<a class="navitem" href="#/home">
+		<a class="navitem {{state=='home'?'current':''}}" href="#/home">
 			<i class="flaticon-home"></i>		
 			<h2>HOME</h2>				
 		</a>
-		<a class="navitem current">
+		<a class="navitem {{state=='camera'?'current':''}}" href="#/camera">
 			<i class="flaticon-technology"></i>		
 			<h2>PHOTO</h2>							
 		</a>
-		<a class="navitem disabled">
+		<a class="navitem {{state=='filters'?'current':''}}" ng-href="{{image? '#/filters':'#'}}" >
 			<div class="flaticon-signs"></div>					
 			<h2>FILTERS</h2>							
-		</a>
-		<a class="navitem disabled">
+		<a/>
+		<a class="navitem {{state=='send'?'current':''}}">
 			<i class="flaticon-paper"></i>			
 			<h2>SEND</h2>							
 		</a>
-		<a class="navitem disabled">
+		<a class="navitem {{state==5?'current':''}}">
 			<i class="flaticon-social"></i>			
 			<h2>SHARE</h2>							
 		</a>
