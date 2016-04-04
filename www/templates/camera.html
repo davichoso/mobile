@@ -7,12 +7,21 @@
 			<i class="flaticon-technology"></i>	&nbsp;CAMERA </button>
     	</div>
 
+       
     	<div class="block tcenter">        
         	<button onclick="document.getElementById('uploader').click()" class="button">
-         	<i class="flaticon-picture"></i> &nbsp;UPLOAD
-        </button>        
+         	  <i class="flaticon-picture"></i> &nbsp;UPLOAD x
+            </button>        
         </div>
-		<input id="uploader" type="file" class="upload" style="display:none;" fileread="vm.uploadme"/>
+		<input id="uploader" type="file" class="upload" accept="image/*" style="display:none;" fileread="vm.uploadme"/>
+      
+
+        <div class="block tcenter">        
+            <button ng-click="takePicturefromlibrary()" class="button">
+              <i class="flaticon-picture"></i> &nbsp;UPLOAD
+            </button>        
+        </div>
+
 
 		</section>
 
