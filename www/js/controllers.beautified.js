@@ -53,8 +53,6 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
         }, function(error) {});
     };
 }).controller("filtersCtrl", function($scope, $rootScope, $location) {
-    
-    $rootScope.imagecopy = $rootScope.image;
     $rootScope.step = 3;
     localStorage.step = 3;
     if (!$rootScope.image) {
