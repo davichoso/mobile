@@ -62,9 +62,36 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     }
     //////aca empieda
     $scope.selhand = "bwl";
+
+
+
+
     $scope.changehand = function(act) {
+        $scope.selhand = act;
+        var exif, transform = "none";
+////////////////////////////////////////////////////////////////////////////
+       var imagemano = new Image();
+       var image = new Image();
+       image.src = $rootScope.image;
+       imagemano.src = 'img/WhiteWomanLeft.png';       
+       var canvas = document.createElement('canvas');
 
-         $scope.selhand = act;    
+       canvas.width = image.width;
+       canvas.height = image.height;
+       var ctx = canvas.getContext("2d");
+       ctx.drawImage(image, 0, 0);
+       /*here i have to get the proporcion*/
+       var newwidth = canvas.width*0.5;
+       var newheight =  newwidth*(imagemano.height/imagemano.width)           
+       var abajo =  canvas.height-newheight;
 
-    };
+
+       /***/
+       ctx.drawImage(imagemano,0,0,imagemano.width,imagemano.height,0,abajo,newwidth,newheight);
+       $rootScope.imagecopy = canvas.toDataURL('image/jpeg',0.8); 
+
+    }
+
+
+
 }).controller("sendCtrl", function($scope) {}).controller("homeCtrl", function($scope) {}).controller("shareCtrl", function($scope) {});

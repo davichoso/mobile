@@ -145,6 +145,12 @@ text-align: center;
  	color: #999999 !important;
  }
 
+
+
+
+
+
+
 #cam .body { background-color: #333333; padding: 0;
 display: flex; align-items: center; justify-content: center; }
 
@@ -177,7 +183,12 @@ flex-direction: row;
 
 
 #filter #opts .flex > div { flex: 8; height: 40px; text-align: center; padding: 4px   }
-#filter #opts .flex > div > div.cont { background-color: #666666; height: 100%; background-size: 100%; background-position: center; background-repeat: no-repeat;}
+#filter #opts .flex > div > div.cont { height: 100%; width: 100%; position: relative; overflow: hidden;}
+#filter #opts .flex > div > div.cont img.hand { position: absolute; bottom: 0; height: 50%; left: 0; z-index: 1 } 
+
+#filter #opts .flex > div > div.cont img.bgf { position: absolute; bottom: 0; height: 100%; left: 0; z-index: 0 } 
+#filter #opts .flex > div > div.cont img.r { left: auto; right: 0;  } 
+/*
 #filter #opts .flex > div > div.wwr { background-image: url('../img/WhiteWomanRight.png');}
 #filter #opts .flex > div > div.wwl { background-image: url('../img/WhiteWomanLeft.png');}
 #filter #opts .flex > div > div.iwr { background-image: url('../img/IndianWomanRight.png');}
@@ -185,6 +196,6 @@ flex-direction: row;
 #filter #opts .flex > div > div.bwr { background-image: url('../img/BlackWomanRight.png');}
 #filter #opts .flex > div > div.bwl { background-image: url('../img/BlackWomanLeft.png');}
 
-#filter #opts .flex > div.active div.cont { background-color: #f0ab00;  border: solid 1px #666666; }
+*/
 
-
+#filter #opts .flex > div.active div.cont img.bgf { border: solid 2px #666666;  box-sizing: border-box;    -moz-box-sizing: border-box;    -webkit-box-sizing: border-box; }
