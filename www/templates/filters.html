@@ -16,9 +16,9 @@
                     	<div class="bgf"></div>                 	                    	
                     </div>
                 </div>
-                <div class="">
+                <div ng-class="{'active':selhand === 'wwr'}" ng-click="changehand('wwr')">
                     <div class="cont">
-                    	<img src="img/WhiteWomanRight.png" class="hand r">
+                    	<img src="img/wwr.png" class="hand r">
                     	<img src="{{image}}" class="bgf r">
                     </div>
                 </div>
@@ -28,9 +28,9 @@
                     	<img src="{{image}}" class="bgf">
                     </div>
                 </div>
-                <div class="">
+                <div ng-class="{'active':selhand === 'iwr'}" ng-click="changehand('iwr')">
                     <div class="cont">
-                    	<img src="img/IndianWomanRight.png" class="hand r">
+                    	<img src="img/iwr.png" class="hand r">
                     	<img src="{{image}}" class="bgf r">
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div ng-class="{'active':selhand === 'bwl'}" ng-click="changehand('bwl')">
                     <div class="cont">
-                    	<img src="img/BlackWomanLeft.png" class="hand">
+                    	<img src="img/bwl.png" class="hand">
                     	<img src="{{image}}" class="bgf">
 
                     </div>

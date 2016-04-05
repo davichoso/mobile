@@ -73,7 +73,7 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
        var imagemano = new Image();
        var image = new Image();
        image.src = $rootScope.image;
-       imagemano.src = 'img/WhiteWomanLeft.png';       
+       imagemano.src = 'img/'+act+'.png';       
        var canvas = document.createElement('canvas');
 
        canvas.width = image.width;
