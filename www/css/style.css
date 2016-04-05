@@ -198,4 +198,4 @@ flex-direction: row;
 
 */
 
-#filter #opts .flex > div.active div.cont img.bgf { border: solid 2px #666666;  box-sizing: border-box;    -moz-box-sizing: border-box;    -webkit-box-sizing: border-box; }
+#filter #opts .flex > div.active div.cont img.bgf { border: solid 2px #e1e1e1;  box-sizing: border-box;    -moz-box-sizing: border-box;    -webkit-box-sizing: border-box; }
