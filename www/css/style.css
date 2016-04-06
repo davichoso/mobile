@@ -329,32 +329,29 @@ background-repeat: no-repeat; background-position: center; padding: 15% 0; backg
 #filter #cont img { max-width:100%; max-height:100%; object-fit: contain;}
 
 
-#filter #opts { position: absolute; bottom: 46px; width: 100% }
+#filter #opts { position: absolute; bottom: 55px; width: 100% }
 
-#filter #opts.man { bottom: 86px; width: 12.5%  }
+#filter #opts.man { bottom: 105px; width: 50px; }
 
 #filter #opts .flex {
 background-color: #f0ab00;
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
-flex-direction: row;
+height: 50px;
+text-align: right;
+padding: 5px;
 }
 
 
 
 
-#filter #opts .flex > div { flex: 8; height: 40px; text-align: center; padding: 4px 2px;   }
+#filter #opts .flex > div { display: inline-block; text-align: left; height: 40px; width: 40px; overflow: hidden;   }
 #filter #opts .flex > div > div.cont { height: 100%; width: 100%; position: relative; overflow: hidden;}
 #filter #opts .flex > div > div.cont img.hand { position: absolute; bottom: 0; height: 50%; left: 0; z-index: 1 } 
-
+#filter #opts .flex .woman { float: left; text-align: center; }
 #filter #opts .flex .woman i  {  color: #fff; text-align: center; }
 
-#filter #opts .flex .woman i::before{ font-size: 24px; line-height: 30px }
+#filter #opts .flex .woman i::before{ font-size: 30px; line-height: 38px }
 
-#filter #opts .flex > div > div.cont img.bgf { position: absolute; bottom: 0; height: 100%; left: 0; z-index: 0 } 
+#filter #opts .flex > div > div.cont img.bgf { position: absolute; bottom: 0; width: 100%; left: 0; z-index: 0 } 
 #filter #opts .flex > div > div.cont img.r { left: auto; right: 0;  } 
 /*
 #filter #opts .flex > div > div.wwr { background-image: url('../img/WhiteWomanRight.png');}
