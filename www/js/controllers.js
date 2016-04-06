@@ -10,7 +10,9 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
                 allowEdit: false,
                 encodingType: Camera.EncodingType.JPEG,
                 saveToPhotoAlbum: false,
-                correctOrientation: true
+                correctOrientation: true,
+                targetWidth: 360,
+                targetHeight: 550,
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
                 $rootScope.image = "data:image/jpeg;base64," + imageData;
@@ -35,8 +37,8 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $scope.takePicturefromlibrary = function() {
         var options = {
             maximumImagesCount: 1,
-            width: 800,
-            height: 800,
+            width: 360,
+            height: 550,
             quality: 80
         };
         $cordovaImagePicker.getPictures(options).then(function(results) {
@@ -81,7 +83,7 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
        var ctx = canvas.getContext("2d");
        ctx.drawImage(image, 0, 0);
        /*here i have to get the proporcion*/
-       var newwidth = canvas.width*0.5;
+       var newwidth = canvas.width*0.6;
        var newheight =  newwidth*(imagemano.height/imagemano.width)           
        var abajo =  canvas.height-newheight;
        
