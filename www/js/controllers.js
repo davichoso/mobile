@@ -4,15 +4,15 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $scope.takePicture = function() {
         document.addEventListener("deviceready", function() {
             var options = {
-                quality: 80,
+                quality: 100,
                 destinationType: Camera.DestinationType.DATA_URL,
                 sourceType: Camera.PictureSourceType.CAMERA,
                 allowEdit: false,
                 encodingType: Camera.EncodingType.JPEG,
                 saveToPhotoAlbum: false,
                 correctOrientation: true,
-                targetWidth: 360,
-                targetHeight: 550,
+                targetWidth: 640,
+                
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
                 $rootScope.image = "data:image/jpeg;base64," + imageData;
@@ -37,9 +37,8 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $scope.takePicturefromlibrary = function() {
         var options = {
             maximumImagesCount: 1,
-            width: 360,
-            height: 550,
-            quality: 80
+            width: 640,            
+            quality: 100
         };
         $cordovaImagePicker.getPictures(options).then(function(results) {
             $scope.promise = $scope.dodat(results);

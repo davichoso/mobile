@@ -185,7 +185,56 @@ text-align: center;
 	font-size: 20px;
 	vertical-align: -2px;
 	padding-left: 4px;
-}		
+}	
+
+/*** tableta ****/
+
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+
+	#home .body .h80p img{
+		margin-top: 100px;
+		max-width: 500px;
+	}
+
+	#home .body .h80p h1{
+	font-family: 'BentonSans-Bold';
+	font-size: 24px
+	}
+
+	#home .body .h80p p{
+	font-family: 'BentonSans-Light';
+	color: #f0ab00;
+	margin: 30px 0;
+	font-size: 20px;
+	text-align:center;
+	}
+
+
+	#home .body .h80p .flex > div
+	{
+		width: 300px;
+		overflow: hidden;
+		padding: 20px 0; 
+	}
+
+	#home #home-button
+	{   
+	
+		height: 80px;
+		font-family: 'BentonSans-Regular';
+		font-size: 23px;
+		padding-top: 15px;
+	}
+
+
+}
+
+
+
+
+
 
 /*///////// navbar //////////*/
 
@@ -208,7 +257,7 @@ text-align: center;
 #navbar a.navitem{
 	-webkit-flex: 1 1 auto;
     flex: 5;
- 	padding: 5px 0;
+ 	padding: 10px 0;
  	text-align: center; 	
 	margin: 0;
 	border-right:1px solid #c8c8c8;
@@ -251,7 +300,7 @@ text-align: center;
 
 /*///////// cam //////////*/
 #cam { background-color: #333333; }
-#cam .header { height: 46px; overflow: hidden; display: block; clear: both; padding: 8px 15px;}
+#cam .header {background-color: #333333;  height: 46px; overflow: hidden; display: block; clear: both; padding: 8px 15px; position: absolute; top: 0; left: 0; width: 100%;}
 #cam .header img { height: 30px; }
 
 #cam .header h3 { 
@@ -259,8 +308,8 @@ font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px;
 }
 
 
-#cam .body { background-color: #333333; padding: 0; background-image: url('../img/bgbg.png');
-display: flex; align-items: center; justify-content: center; height: calc(100% - 85px) }
+#cam .body { margin-top: 46px; background-color: #333333; padding: 0; background-image: url('../img/bgbg.png');
+display: flex; align-items: center; justify-content: center; height: calc(100% - 100px) }
 
 #cam .cont { background-image: url('../img/bg22.jpg'); width: 100%; 
 background-repeat: no-repeat; background-position: center; padding: 15% 0; background-size: 100%; }
