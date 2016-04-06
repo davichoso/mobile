@@ -1,28 +1,30 @@
-<ion-view id="cam" animation="no-animation">
-    <ion-content overflow-scroll="true" padding="true" scroll="false" class="body">
-    	
-		<section class="cont">
-    	<div class="block tcenter">
-			<button ng-click='takePicture()' class="button">
-			<i class="flaticon-technology"></i>	&nbsp;CAMERA </button>
-    	</div>
+<ion-view id="cam">
+    <ion-content overflow-scroll="true" scroll="false" >
+        <section class="header">
+            <img src="img/homelogo.png">
 
-       
-    	<div class="block tcenter">        
-        	<button onclick="document.getElementById('uploader').click()" class="button">
-         	  <i class="flaticon-picture"></i> &nbsp;UPLOAD x
-            </button>        
-        </div>
-		<input id="uploader" type="file" class="upload" accept="image/*" style="display:none;" fileread="vm.uploadme"/>
-      
+            <h3>TAKE A PICTURE</h3>
 
-        <div class="block tcenter">        
-            <button ng-click="takePicturefromlibrary()" class="button">
-              <i class="flaticon-picture"></i> &nbsp;UPLOAD
-            </button>        
-        </div>
+        </section>    	
+		<section class="body">
+            <div class="cont">
+            	<div class="block tcenter">
+        			<button ng-click='takePicture()' class="button">
+        			<i class="flaticon-technology"></i>	&nbsp;CAMERA </button>
+            	</div>           
+            	<div class="block tcenter" style="display:none;">        
+                	<button onclick="document.getElementById('uploader').click()" class="button">
+                 	  <i class="flaticon-picture"></i> &nbsp;UPLOAD x
+                    </button>        
+                </div>
+        		<input id="uploader" type="file" class="upload" accept="image/*" style="display:none;" fileread="vm.uploadme"/>
 
-
+                <div class="block tcenter">        
+                    <button ng-click="takePicturefromlibrary()" class="button">
+                      <i class="flaticon-picture"></i> &nbsp;UPLOAD
+                    </button>        
+                </div>
+            </div>    
 		</section>
 
         <navbar></navbar>

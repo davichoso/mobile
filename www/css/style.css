@@ -114,7 +114,7 @@ text-align: center;
 }	
 
 #home .body .h80p img{
-	margin-top: 30px;
+	margin-top: 20px;
 	max-width: 250px;
 }	
 
@@ -145,7 +145,7 @@ text-align: center;
 	border:1px solid  #f0ab00;
 	padding: 10px;
 	padding-bottom: 9px;
-    padding-top: 11px;
+    padding-top: 13px;
 	border-radius: 25px;	
 }
 #home .body .h80p .flex
@@ -162,7 +162,7 @@ text-align: center;
 {
 	width: 125px;
 	overflow: hidden;
-	padding: 10px 0; 
+	padding: 11px 0; 
 }
 
 
@@ -176,8 +176,18 @@ text-align: center;
 	border-radius: 0;
 	width: 100%;
 	color: white;
-	height: 46px;
-}			
+	height: 40px;
+	font-family: 'BentonSans-Regular';
+	font-size: 12px
+}	
+#home #home-button i::before
+{
+	font-size: 20px;
+	vertical-align: -2px;
+	padding-left: 4px;
+}		
+
+/*///////// navbar //////////*/
 
 #navbar {
 	background-color: #666666;
@@ -239,21 +249,30 @@ text-align: center;
  	color: #999999 !important;
  }
 
+/*///////// cam //////////*/
+#cam { background-color: #333333; }
+#cam .header { height: 46px; overflow: hidden; display: block; clear: both; padding: 8px 15px;}
+#cam .header img { height: 30px; }
+
+#cam .header h3 { 
+font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px; float: right;
+}
 
 
+#cam .body { background-color: #333333; padding: 0; background-image: url('../img/bgbg.png');
+display: flex; align-items: center; justify-content: center; height: calc(100% - 85px) }
 
-
-
-
-#cam .body { background-color: #333333; padding: 0;
-display: flex; align-items: center; justify-content: center; }
-
-#cam .cont { background-image: url('../img/bg2.png'); width: 100%; 
+#cam .cont { background-image: url('../img/bg22.jpg'); width: 100%; 
 background-repeat: no-repeat; background-position: center; padding: 15% 0; background-size: 100%; }
 #cam .tcenter { text-align: center; margin-bottom: 20px; }
-#cam .tcenter button { width: 300px; border-radius: 25px;  background-color: #f0ab00; color: #fff; }
+#cam .tcenter button { width: 180px; border-radius: 25px;  background-color: #f0ab00; color: #fff;  padding-left: 18px; font-family: 'BentonSans-Regular'; }
 #cam .tcenter button.activated { background-color: #999999; }
+#cam .tcenter button i::before { font-size: 22px; vertical-align: -1px; margin-right: 2px; }
+#cam .tcenter button i { margin-right: 2px; }
 
+
+
+/*///////// filter //////////*/
 
 #filter { background-color: #333333 }
 #filter #cont { width: 100%;  height: calc(100% - 90px); display: flex; align-items: center; justify-content: center; }
