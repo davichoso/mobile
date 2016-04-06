@@ -61,7 +61,7 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
         $location.path("/camera");
     }
     //////aca empieda
-    $scope.selhand = "bwl";
+    $scope.selhand = "no";
 
 
 
@@ -84,10 +84,14 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
        var newwidth = canvas.width*0.5;
        var newheight =  newwidth*(imagemano.height/imagemano.width)           
        var abajo =  canvas.height-newheight;
+       
 
+        derecha=0;
+       if(act.endsWith('r',3))
+        derecha =  canvas.width-newwidth;
 
        /***/
-       ctx.drawImage(imagemano,0,0,imagemano.width,imagemano.height,0,abajo,newwidth,newheight);
+       ctx.drawImage(imagemano,0,0,imagemano.width,imagemano.height,derecha,abajo,newwidth,newheight);
        $rootScope.imagecopy = canvas.toDataURL('image/jpeg',0.8); 
 
     }

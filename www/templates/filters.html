@@ -1,19 +1,27 @@
 <ion-view id="filter">
     <ion-content overflow-scroll="false" padding="false" scroll="false">
         <div id="cont">
-            <div id="frame">
                 <img id="main" src="{{imagecopy}}">
-            </div>
         </div>
+
+
+
+        <section id="opts" class="man">
+            <div class="flex">
+                <div class="woman">
+                    <i class='flaticon-black'></i>
+                </div>       
+            </div>
+        </section>    
 
         <section id="opts">
             <div class="flex">
                 <div class="woman">
                     <i class='flaticon-people'></i>
                 </div>
-                <div class="">
-                    <div class="cont nothing">   
-                    	<div class="bgf"></div>                 	                    	
+                <div ng-class="{'active':selhand === 'no'}" ng-click="changehand('no')">
+                    <div class="cont nothing">                       	   
+                        <img src="img/marco.png" style="height:100%">
                     </div>
                 </div>
                 <div ng-class="{'active':selhand === 'wwr'}" ng-click="changehand('wwr')">
@@ -22,9 +30,9 @@
                     	<img src="{{image}}" class="bgf r">
                     </div>
                 </div>
-                <div class="">
+                <div ng-class="{'active':selhand === 'wwl'}" ng-click="changehand('wwl')">
                     <div class="cont">
-                    	<img src="img/WhiteWomanLeft.png" class="hand">
+                    	<img src="img/wwl.png" class="hand">
                     	<img src="{{image}}" class="bgf">
                     </div>
                 </div>
@@ -36,13 +44,13 @@
                 </div>
                 <div ng-class="{'active':selhand === 'iwl'}" ng-click="changehand('iwl')">
                     <div class="cont">
-                    	<img src="img/IndianWomanLeft.png" class="hand">
+                    	<img src="img/iwl.png" class="hand">
                     	<img src="{{image}}" class="bgf">
                     </div>
                 </div>
                 <div ng-class="{'active':selhand === 'bwr'}" ng-click="changehand('bwr')">
                     <div class="cont">
-                    	<img src="img/BlackWomanRight.png" class="hand r">
+                    	<img src="img/bwr.png" class="hand r">
                     	<img src="{{image}}" class="bgf r">
                     </div>
                 </div>
