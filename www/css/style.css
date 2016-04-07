@@ -461,23 +461,25 @@ padding: 5px;
 #send .body .leftside { width: 10%; display: inline-block; vertical-align: top; }
 #send .body .center { width: 80%; display: inline-block;  vertical-align: top; height: 100%}
 
-#send .body .center .cont { margin-top: 10px; margin-bottom: 10px; overflow: hidden; text-align: center; }
-#send .body .center .cont img { max-height:150px; }
+#send .body .center .cont { margin-top: 10px; margin-bottom: 1px; overflow: hidden; text-align: center; }
+#send .body .center .cont img { max-height:90px; }
 
-#send .body .center form .item { border: 0; position: relative; }
-#send .body .center form input  { border-bottom: solid 1px #cccccc; color: #666666; font-family: 'BentonSans-Regular' }
+#send .body .center form .item { border: 0; position: relative; margin-bottom: 13px; }
+#send .body .center form input  { border-bottom: solid 1px #cccccc; color: #666666; font-family: 'BentonSans-Regular'; font-size: 15px; }
 
-#send .body .center form .item-select { margin-top: 5px; overflow: hidden; padding-bottom: 17px;   }
+#send .body .center form .item-select { margin-top: 5px; overflow: hidden; padding-bottom: 17px; font-size: 15px;   }
 #send .body .center form .item-select select { border-bottom: solid 1px #cccccc; max-width: 100%; width: 100%; text-align: left; color: #666666; font-family: 'BentonSans-Regular'; margin-bottom: 2px; padding-left: 0px; left: 15px; }
 #send .body .center form .item-select select { text-transform: uppercase;}
 
 #send .body .center form .item-toggle .toggle { left: 15px; float: left;}
 
-#send .body .center form .item-toggle span  { font-size: 12px;  margin-left: 62px; font-family: 'BentonSans-Regular'; }
+#send .body .center form .item-toggle span  { font-size: 12px;  margin-left: 80px; font-family: 'BentonSans-Regular'; }
 #send .body .center form .item-toggle span a { text-transform: none; text-decoration: none; color: #0076cb; font-family: 'BentonSans-Regular'; }
 
+#send .body .center .button.button-positive { background-color: #0076cb; }
 
-
+#send .body .center  .track {  width: 58px; height: 38px; }
+#send .body .center  .handle {  width: 34px; height: 34px; }
 #send .body .center form input::-webkit-input-placeholder {
 color: #666666;
 opacity: 1;
@@ -494,4 +496,6 @@ opacity: 1;
 color: #666666;
 opacity: 1;
 } 
+
+
 
