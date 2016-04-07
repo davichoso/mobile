@@ -35,9 +35,12 @@
     
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7" step="{{step}}">
+  <body ng-app="app" animation="slide-left-right-ios7" step="{{step}}" h="{{loading}}">
   <div>
-    <div>
+    <div id="loader" ng-show='loading'>
+            <img src="img/triangle.svg">
+    </div>
+        
         <ion-nav-view></ion-nav-view>
     </div>
   </div>

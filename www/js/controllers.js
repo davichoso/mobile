@@ -2,16 +2,17 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $rootScope.step = 2;
     localStorage.step = 2;
     $scope.takePicture = function() {
+      $rootScope.loading = true;  
         document.addEventListener("deviceready", function() {
             var options = {
-                quality: 100,
+                quality: 90,
                 destinationType: Camera.DestinationType.DATA_URL,
                 sourceType: Camera.PictureSourceType.CAMERA,
                 allowEdit: false,
                 encodingType: Camera.EncodingType.JPEG,
                 saveToPhotoAlbum: false,
                 correctOrientation: true,
-                targetWidth: 640,
+                targetWidth: 1200
                 
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
@@ -20,7 +21,9 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
                 localStorage.step = 3;
                 $rootScope.step = 3;
                 $location.path("/filters");
-            }, function(err) {});
+            }, function(err) {
+              $rootScope.loading = false;  
+            });
         }, false);
     };
     $scope.dodat = function(results) {
@@ -30,15 +33,17 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
                 q.resolve(base64);
             });
         } else {
+          $rootScope.loading = false;  
             q.reject("NaN");
         }
         return q.promise;
     };
     $scope.takePicturefromlibrary = function() {
+      $rootScope.loading = true;  
         var options = {
             maximumImagesCount: 1,
             width: 640,            
-            quality: 100
+            quality: 90
         };
         $cordovaImagePicker.getPictures(options).then(function(results) {
             $scope.promise = $scope.dodat(results);
@@ -51,10 +56,13 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
             }, function(err) {
                 console.log("error");
             });
-        }, function(error) {});
+        }, function(error) {
+          $rootScope.loading = false;  
+        });
     };
 }).controller("filtersCtrl", function($scope, $rootScope, $location) {
     
+    $rootScope.loading = false;  
     $rootScope.imagecopy = $rootScope.image;
     $rootScope.step = 3;
     localStorage.step = 3;

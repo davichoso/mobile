@@ -37,8 +37,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
   $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams)
   { 
-    $rootScope.state = toState.name;   
+    $rootScope.state = toState.name; 
+    // $rootScope.loading = true;  
+
   })
+
+  // $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams)
+  // { 
+  //   $rootScope.loading = false;  
+  // })
 
 }])
 .config(function($ionicConfigProvider) {
