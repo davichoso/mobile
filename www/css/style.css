@@ -340,7 +340,7 @@ text-align: center;
  	padding: 10px 0;
  	text-align: center; 	
 	margin: 0;
-	border-right:1px solid #c8c8c8;
+	border-right:1px solid #545454;
 	text-transform: none;
 	text-decoration: none;
 }
@@ -350,6 +350,7 @@ text-align: center;
  }
  #navbar a.navitem.disabled{
 	background-color: #dddddd;
+	border-right:1px solid #c8c8c8;
  }
 #navbar a.navitem:last-child{
 	border:0 !important;
@@ -385,7 +386,7 @@ text-align: center;
 #cam .header h3 { font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px; float: right;}
 
 
-#cam .body { margin-top: 46px; background-color: #333333; padding: 0; background-image: url('../img/bgbg.png');
+#cam .body { margin-top: 46px; background-color: #333333; padding: 0; background-image: url('../img/bglineas.png');
 display: flex; align-items: center; justify-content: center; height: calc(100% - 100px) }
 
 #cam .cont { background-image: url('../img/bg22.jpg'); width: 100%; 
@@ -405,7 +406,7 @@ background-repeat: no-repeat; background-position: center; padding: 15% 0; backg
 #filter .header h3 { font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px; float: right;}
 
 
-#filter { background-color: #333333; background-image: url('../img/bgbg.png'); }
+#filter { background-color: #333333; background-image: url('../img/bglineas.jpg'); }
 #filter #cont { width: 100%;  height: calc(100% - 105px); display: flex; align-items: center; justify-content: center; }
 
 #filter #cont img { max-width:100%; max-height:100%; object-fit: contain;}
@@ -475,6 +476,7 @@ padding: 5px;
 
 #send .body .center form .item-toggle span  { font-size: 12px;  margin-left: 80px; font-family: 'BentonSans-Regular'; }
 #send .body .center form .item-toggle span a { text-transform: none; text-decoration: none; color: #0076cb; font-family: 'BentonSans-Regular'; }
+
 
 #send .body .center .button.button-positive { background-color: #0076cb; }
 
