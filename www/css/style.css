@@ -468,18 +468,18 @@ padding: 5px;
 #send .body .center form input  { border-bottom: solid 1px #cccccc; color: #666666; font-family: 'BentonSans-Regular'; font-size: 15px; }
 
 #send .body .center form .item-select { margin-top: 5px; overflow: hidden; padding-bottom: 17px; font-size: 15px;   }
-#send .body .center form .item-select select { border-bottom: solid 1px #cccccc; max-width: 100%; width: 100%; text-align: left; color: #666666; font-family: 'BentonSans-Regular'; margin-bottom: 2px; padding-left: 0px; left: 15px; }
-#send .body .center form .item-select select { text-transform: uppercase;}
+#send .body .center form .item-select select { direction: ltr; text-transform: uppercase; border-bottom: solid 1px #cccccc; max-width: 100%; width: 100%; text-align: left; color: #666666; font-family: 'BentonSans-Regular'; margin-bottom: 2px; padding-left: 0px; left: 15px; }
+#send .body .center form .item-select select { }
 
-#send .body .center form .item-toggle .toggle { left: 15px; float: left;}
+#send .body .center form .item-toggle .toggle { left: 15px; float: left; height: 35px;}
 
 #send .body .center form .item-toggle span  { font-size: 12px;  margin-left: 80px; font-family: 'BentonSans-Regular'; }
 #send .body .center form .item-toggle span a { text-transform: none; text-decoration: none; color: #0076cb; font-family: 'BentonSans-Regular'; }
 
 #send .body .center .button.button-positive { background-color: #0076cb; }
 
-#send .body .center  .track {  width: 58px; height: 38px; }
-#send .body .center  .handle {  width: 34px; height: 34px; }
+#send .body .center  .track {  width: 58px; height: 37px; }
+#send .body .center  .handle {  width: 34px; height: 34px; background-color: #fff; top: 6px;  left: 11px; }
 #send .body .center form input::-webkit-input-placeholder {
 color: #666666;
 opacity: 1;
