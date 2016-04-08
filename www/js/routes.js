@@ -56,14 +56,10 @@ angular.module('app.routes', ['ionicUIRouter'])
     controller: 'cameraCtrl'
   })
 
-  .state('tabsController.share', {
-    url: '/share',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/share.html',
-        controller: 'shareCtrl'
-      }
-    }
+  .state('share', {
+  url: '/share',
+  templateUrl: 'templates/share.html',
+  controller: 'shareCtrl'
   })
 
 $urlRouterProvider.otherwise('/home')

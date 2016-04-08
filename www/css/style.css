@@ -503,4 +503,41 @@ opacity: 1;
 } 
 
 
+/*///////// share //////////*/
+
+#share .header {background-color: #ffffff;  height: 46px; overflow: hidden; display: block; clear: both; padding: 8px 15px; width: 100%;}
+#share .header img { height: 30px; }
+#share .header h3 { font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px; float: right;}
+
+
+#share .title  h2 { font-family: 'BentonSans-Light'; text-align: center; color: #666666; }
+
+#share .cont { width: 100%; text-align: center; }
+#share .cont img { width: 70%; }
+#share .social.f { margin-top: 15px;  border-top: 1px solid #cccccc; text-align: center;}
+#share .social.tw {border: 0;}
+
+
+#share .social .c { width: 80%;  overflow: hidden; margin: auto;}
+#share .social { width: 100%; text-align: center; border-bottom: 1px solid #cccccc; padding: 18px 0; }
+
+
+
+#share .social div { display: block; }
+#share .social div button { margin: 0; border: 0; background-color: #1a419b; font-size: 10px; font-family: 'OpenSans'; color: #fff; padding: 11px 52px; border-radius: 25px; font-weight: bold; } 
+#share .social div.btn { float: right; }
+
+#share .social div i:before { font-size: 16px; }
+
+#share .social.f div i { color: #1a419b; }
+#share .social div.i { float: left; padding-right: 20px; padding-top: 8px; }
+#share .social div.h { float: left; padding-top: 10px; height: 25px; }
+#share .social div.h h3 {  font-family: 'BentonSans-Regular'; color: #666666; font-size: 15px;  }
+
+/**in*/
+#share .social.in div button {  background-color: #2545e7; } 
+#share .social.in div i { color: #2545e7; }
+
+#share .social.tw div button {  background-color: #2bb7f1; } 
+#share .social.tw div i { color: #2bb7f1; }
 

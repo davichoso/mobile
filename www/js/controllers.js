@@ -107,4 +107,25 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
 
 
 
-}).controller("sendCtrl", function($scope) {}).controller("homeCtrl", function($scope) {}).controller("shareCtrl", function($scope) {});
+}).controller("sendCtrl", function($scope, $rootScope) {
+
+if (!$rootScope.image) {
+        $location.path("/camera");
+}
+
+
+
+
+
+}).controller("homeCtrl", function($scope, $rootScope) {
+
+
+
+}).controller("shareCtrl", function($scope, $rootScope) {
+
+if (!$rootScope.image) {
+        $location.path("/camera");
+}
+
+
+});

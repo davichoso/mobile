@@ -1,19 +1,66 @@
-<ion-view animation="no-animation">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+<ion-view id="share">
+    <ion-content overflow-scroll="false" padding="false" scroll="true">
+        
+        <section class="header">
+            <img src="img/homelogo2.png">
+            <h3>SHARE</h3>
+        </section> 
+
+    <div class="title">
+        <h2>
+            Share!
+        </h2>
+        <div class="cont">
+                    <img id="main" src="{{imagecopy?imagecopy:image}}">
+         </div>     
+    </div>    
+
+
+
+        <div class="social f">
+            <div class="c">
+            <div class="i">
+                <i class='flaticon-social-1'></i>
+            </div>
+            <div class="h">
+                <h3>FACEBOOK</h3>
+            </div>
+            <div class="btn">
+                 <button>SHARE</button>
+            </div>
+            </div>
+
         </div>
-        <ion-list>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-        </ion-list>
+
+        <div class="social in">
+            <div class="c">
+            <div class="i">
+                <i class='flaticon-social-2'></i>
+            </div>
+            <div class="h">
+                <h3>LINKEDIN</h3>
+            </div>
+            <div class="btn">
+                 <button>SHARE</button>
+            </div>
+            </div>
+        </div>
+        
+        <div class="social tw">
+            <div class="c">
+            <div class="i">
+                <i class='flaticon-social-media'></i>
+            </div>
+            <div class="h">
+                <h3>TWITTER</h3>
+            </div>
+            <div class="btn">
+                 <button>SHARE</button>
+            </div>
+            </div>
+        </div>
+  
+        
     </ion-content>
+    <navbar></navbar>
 </ion-view>
