@@ -73,8 +73,6 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     };
 
 
-
-
     $scope.dodat = function(results) {
         var q = $q.defer();
         if (results) {
@@ -141,18 +139,11 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     }
 
 
-
 }).controller("filtersCtrl", function($scope, $rootScope, $location) {
     
     if(!$rootScope.sex)
       $rootScope.sex = 'w'
 
-    // //////////////
-
-
-///////////////////
-
-    
 
     $rootScope.loading = false;  
     $rootScope.imagecopy = $rootScope.image;
@@ -163,8 +154,6 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     }
     //////aca empieda
     $scope.selhand = "no";
-
-
 
 
     $scope.changehand = function(act,dir) {
@@ -201,7 +190,6 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $rootScope.sex = sex   
     }
 
-
 }).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs) {
 
 if (!$rootScope.image) {
@@ -221,19 +209,27 @@ $scope.si = function() {
     });
 }
 
-
-
-
-
 }).controller("homeCtrl", function($scope, $rootScope) {
 
 
 
-}).controller("shareCtrl", function($scope, $rootScope) {
+}).controller("shareCtrl", function($scope, $rootScope,$cordovaSocialSharing) {
+  if (!$rootScope.image) {
+          $location.path("/camera");
+  }
 
-if (!$rootScope.image) {
-        $location.path("/camera");
-}
+  $scope.tw = function(){
+
+      $cordovaSocialSharing
+        .shareViaTwitter('', 'image', 'link')
+        .then(function(result) {
+          // Success!
+        }, function(err) {
+          // An error occurred. Show a message to the user
+        });
+
+
+  };
 
 
 });
