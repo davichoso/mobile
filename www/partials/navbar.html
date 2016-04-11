@@ -8,15 +8,15 @@
 			<i class="flaticon-technology"></i>		
 			<h2>PHOTO</h2>							
 		</a>
-		<a class="navitem {{state=='filters'?'current':(state=='camera'?'disabled':'')}}" ng-href="{{image? '#/filters':'#'}}" >
+		<a class="navitem {{state=='filters'?'current':(state=='camera'?'disabled':'')}}" ng-href="{{image && (state=='send' || state=='camera' || state=='share' || state=='photo')? '#/filters':'#'}}" >
 			<div class="flaticon-signs"></div>					
 			<h2>FILTERS</h2>							
 		<a/>
-		<a class="navitem {{state=='send'?'current':(state=='filters'||state=='camera'?'disabled':'')}}" ng-href="{{image? '#/send':'#'}}">
+		<a class="navitem {{state=='send' ? 'current':(state=='filters' || state=='camera'?'disabled':'')}}" ng-href="{{image && (state=='filters' || state=='share')? '#/send':'#'}}">
 			<i class="flaticon-paper"></i>			
 			<h2>SEND</h2>							
 		</a>
-		<a class="navitem {{state=='share'?'current':'disabled'}}" ng-href="{{image? '#/share':'#'}}">
+		<a class="navitem {{state=='share'?'current':'disabled'}}" ng-href="{{(image && state=='send')?'#/share':'#'}}">
 			<i class="flaticon-social"></i>			
 			<h2>SHARE</h2>							
 		</a>

@@ -7,14 +7,14 @@
         </section> 
 
         <div id="cont">
-                <img id="main" src="{{imagecopy}}">
+                <img id="main" ng-src="{{imagecopy}}">
         </div>
 
 
 
         <section id="opts" class="man">
             <div class="flex">
-                <div class="woman">
+                <div class="woman"  ng-click="changesex('m')">
                     <i class='flaticon-black'></i>
                 </div>       
             </div>
@@ -22,7 +22,7 @@
 
         <section id="opts">
             <div class="flex">
-                <div class="woman">
+                <div class="woman" ng-click="changesex('w')">
                     <i class='flaticon-people'></i>
                 </div>
                 <div ng-class="{'active':selhand === 'no'}" ng-click="changehand('no')">
@@ -30,40 +30,40 @@
                         <img src="img/marco.png" style="height:100%">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'wwr'}" ng-click="changehand('wwr')">
+                <div sex={{sex}} ng-class="{'active':selhand === 'w'+sex+'r'}" ng-click="changehand('w','r')">
                     <div class="cont">
-                    	<img src="img/wwr.png" class="hand r">
-                    	<img src="{{image}}" class="bgf r">
+                    	<img ng-src="img/s/w{{sex}}r.png" class="hand r">
+                    	<img ng-src="{{imagebg}}" class="bgf r">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'wwl'}" ng-click="changehand('wwl')">
+                <div ng-class="{'active':selhand === 'w'+sex+'l'}" ng-click="changehand('w','l')">
                     <div class="cont">
-                    	<img src="img/wwl.png" class="hand">
-                    	<img src="{{image}}" class="bgf">
+                    	<img ng-src="img/s/w{{sex}}l.png" class="hand">
+                    	<img ng-src="{{imagebg}}" class="bgf">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'iwr'}" ng-click="changehand('iwr')">
+                <div ng-class="{'active':selhand === 'i'+sex+'r'}" ng-click="changehand('i','r')">
                     <div class="cont">
-                    	<img src="img/iwr.png" class="hand r">
-                    	<img src="{{image}}" class="bgf r">
+                    	<img ng-src="img/s/i{{sex}}r.png" class="hand r">
+                    	<img ng-src="{{imagebg}}" class="bgf r">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'iwl'}" ng-click="changehand('iwl')">
+                <div ng-class="{'active':selhand === 'i'+sex+'l'}" ng-click="changehand('i','l')">
                     <div class="cont">
-                    	<img src="img/iwl.png" class="hand">
-                    	<img src="{{image}}" class="bgf">
+                    	<img ng-src="img/s/i{{sex}}l.png" class="hand">
+                    	<img ng-src="{{imagebg}}" class="bgf">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'bwr'}" ng-click="changehand('bwr')">
+                <div ng-class="{'active':selhand === 'b'+sex+'r'}" ng-click="changehand('b','r')">
                     <div class="cont">
-                    	<img src="img/bwr.png" class="hand r">
-                    	<img src="{{image}}" class="bgf r">
+                    	<img ng-src="img/s/b{{sex}}r.png" class="hand r">
+                    	<img ng-src="{{imagebg}}" class="bgf r">
                     </div>
                 </div>
-                <div ng-class="{'active':selhand === 'bwl'}" ng-click="changehand('bwl')">
+                <div ng-class="{'active':selhand === 'b'+sex+'l'}" ng-click="changehand('b','l')">
                     <div class="cont">
-                    	<img src="img/bwl.png" class="hand">
-                    	<img src="{{image}}" class="bgf">
+                    	<img ng-src="img/s/b{{sex}}l.png" class="hand">
+                    	<img ng-src="{{imagebg}}" class="bgf">
 
                     </div>
                 </div>
@@ -72,3 +72,4 @@
         <navbar></navbar>
     </ion-content>
 </ion-view>
+

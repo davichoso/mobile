@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=320">
@@ -37,8 +34,8 @@
   </head>
   <body ng-app="app" animation="slide-left-right-ios7" step="{{step}}" h="{{loading}}">
   <div>
-    <div id="loader" ng-show='loading'>
-            <img src="img/triangle.svg">
+    <div id="loader" ng-show='loading' ng-click='loading=false'>
+            <img src="img/hourglass.gif">
     </div>
         
         <ion-nav-view></ion-nav-view>

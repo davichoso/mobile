@@ -10,22 +10,46 @@
         			<button ng-click='takePicture()' class="button">
         			<i class="flaticon-technology"></i>	&nbsp;CAMERA </button>
             	</div>           
-            	<div class="block tcenter" >       
+            	<div class="block tcenter" style="display:none" 
+               
+                >       
                 	<button onclick="document.getElementById('uploader').click()" class="button">
                  	  <i class="flaticon-picture"></i> &nbsp;UPLOAD x
                     </button>        
                 </div>
         		<input id="uploader" type="file" class="upload" accept="image/*" style="display:none;" fileread="vm.uploadme"/>
 
-                <div class="block tcenter">        
+              <!--   <div class="block tcenter">        
                     <button ng-click="takePicturefromlibrary()" class="button">
+                    <button ng-click="takePicture2()" class="button">
+                      <i class="flaticon-picture"></i> &nbsp;UPLOAD
+                    </button>        
+                </div> -->
+
+
+                <div class="block tcenter">        
+                    <!-- <button ng-click="takePicturefromlibrary()" class="button"> -->
+                    <button ng-click="takePicture2()" class="button">
                       <i class="flaticon-picture"></i> &nbsp;UPLOAD
                     </button>        
                 </div>
-            </div>    
+            </div>
 		</section>
-
         <navbar></navbar>
+        <div style="display:none">
+            <img src="img/bml.png">
+            <img src="img/bwl.png">
+            <img src="img/iml.png">
+            <img src="img/iwl.png">
+            <img src="img/wml.png">
+            <img src="img/wwl.png">
+            <img src="img/bmr.png">
+            <img src="img/bwr.png">
+            <img src="img/imr.png">
+            <img src="img/iwr.png">
+            <img src="img/wmr.png">
+            <img src="img/wwr.png">
+        </div>
     </ion-content>
 </ion-view>
 

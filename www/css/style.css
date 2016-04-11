@@ -1,4 +1,9 @@
-body { background-color: #000; }
+body { background-color: #000;
+ -webkit-font-smoothing: antialiased;
+ -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+ text-shadow: rgba(0,0,0,.01) 0 0 1px;
+
+  }
 
 @font-face {
   font-family: 'BentonSans-Regular';
@@ -99,73 +104,15 @@ text-align: center;
   width: 2em;  
   top: 0;
   right: 0;  
-  width: 10%;
-  height: 10%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
+#loader img { margin-top: 55%;
 
-@keyframes spin {
-	to { transform: rotate(1turn); }
-}
-
-
-
-.progress {
-	position: relative;
-	display: inline-block;
-	width: 5em;
-	height: 5em;
-	margin: 0 .5em;
-	font-size: 12px;
-	text-indent: 999em;
-	overflow: hidden;
-	animation: spin 1s infinite steps(8);
-}
-
-.small.progress {
-	font-size: 6px;
-}
-
-.large.progress {
-	font-size: 24px;
-}
-
-.progress:before,
-.progress:after,
-.progress > div:before,
-.progress > div:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 2.25em; /* (container width - part width)/2  */
-	width: .5em;
-	height: 1.5em;
-	border-radius: .2em;
-	background: #eee;
-	box-shadow: 0 3.5em #eee; /* container height - part height */
-	transform-origin: 50% 2.5em; /* container height / 2 */
-}
-
-.progress:before {
-	background: #555;
-}
-
-.progress:after {
-	transform: rotate(-45deg);
-	background: #777;
-}
-
-.progress > div:before {
-	transform: rotate(-90deg);
-	background: #999;
-}
-
-.progress > div:after {
-	transform: rotate(-135deg);
-	background: #bbb;
-}
-
-
-
+	}
+#hiddenImage { display: none;}
 /*****************************************************************************/
 
 
@@ -198,26 +145,41 @@ text-align: center;
 	max-width: 250px;
 }	
 
+
+@media screen and (orientation:portrait) {
+/* Portrait styles */
+#home .body .h80p img{
+	margin-top: 35px;
+}	
+}
+
+
 #home .body .h80p h1{
 	font-family: 'BentonSans-Bold';
 	color: #e2e2e2;
 	margin: 10px 0;
-	font-size: 24px
+	font-size: 24px;
+	text-shadow: 1px 0 2px #000;
+
 }
 
 #home .body .h80p p{
 	font-family: 'BentonSans-Light';
 	color: #f0ab00;
 	margin: 10px 0;
-	font-size: 16px;
+	font-size: 17px;
 	text-align:center;
+	text-shadow: 1px 0 2px #000;
 }
 
 #home .body .h80p h3{
 	font-family: 'BentonSans-Regular';
 	color: #ffffff;
-	margin: 10px 0;
-	font-size: 12px;
+	margin: 17px 0 10px;
+	font-size: 13px;
+	text-shadow: 1px 0 2px #000;
+
+
 }
 
 #home .body .h80p i{	
@@ -226,7 +188,8 @@ text-align: center;
 	padding: 10px;
 	padding-bottom: 9px;
     padding-top: 13px;
-	border-radius: 25px;	
+	border-radius: 25px;
+
 }
 #home .body .h80p .flex
 {
@@ -386,11 +349,11 @@ text-align: center;
 #cam .header h3 { font-family: 'BentonSans-Regular';	color: #F0AB00; font-size: 12px; margin: 9px; float: right;}
 
 
-#cam .body { margin-top: 46px; background-color: #333333; padding: 0; background-image: url('../img/bglineas.png');
+#cam .body { margin-top: 46px; background-color: #333333; padding: 0; background-image: url('../img/bglineas.jpg');
 display: flex; align-items: center; justify-content: center; height: calc(100% - 100px) }
 
-#cam .cont { background-image: url('../img/bg22.jpg'); width: 100%; 
-background-repeat: no-repeat; background-position: center; padding: 15% 0; background-size: 100%; }
+#cam .cont { background-image: url('../img/parte.jpg'); width: 100%; 
+background-repeat: no-repeat; background-position: center; padding: 33% 0; background-size: 100%; }
 #cam .tcenter { text-align: center; margin-bottom: 20px; }
 #cam .tcenter button { width: 180px; border-radius: 25px;  background-color: #f0ab00; color: #fff;  padding-left: 18px; font-family: 'BentonSans-Regular'; }
 #cam .tcenter button.activated { background-color: #999999; }
@@ -475,14 +438,16 @@ padding: 5px;
 
 
 #send .body .center form .item-toggle { height: 30px; padding-top: 25px; padding-bottom: 35px;}
-#send .body .center form .item-toggle .toggle { left: 7px; float: left; height: 35px;}
+#send .body .center form .item-toggle .toggle { left: 7px; float: left; height: 35px; width: 140px;}
 
 #send .body .center form .item-toggle span  { font-size: 12px;  margin-left: 80px; font-family: 'BentonSans-Regular'; }
 #send .body .center form .item-toggle span a { text-transform: none; text-decoration: none; color: #0076cb; font-family: 'BentonSans-Regular'; }
 
 
 #send .body .center .button.button-positive { background-color: #0076cb; }
-
+#send .body .center .s {position: relative;	}
+#send .body .center .s .a { line-height: 15px;  position: absolute; top: 24px; left: 75px; font-size: 14px; font-family: 'BentonSans-Regular'; z-index: 10 }
+#send .body .center .s .terms { text-decoration: none; 	}
 #send .body .center  .track {  width: 54px; height: 37px; }
 #send .body .center  .handle {  width: 34px; height: 34px; background-color: #fff; top: 6px;  left: 7px; }
 #send .body .center form input::-webkit-input-placeholder {
@@ -502,6 +467,10 @@ color: #666666;
 opacity: 1;
 } 
 
+#send .body .center .toggle.toggle-energized input:checked + .track {
+    background-color: #f0ab00;
+    border-color: #f0ab00;
+}
 
 /*///////// share //////////*/
 
@@ -513,13 +482,13 @@ opacity: 1;
 #share .title  h2 { font-family: 'BentonSans-Light'; text-align: center; color: #666666; }
 
 #share .cont { width: 100%; text-align: center; }
-#share .cont img { width: 70%; }
+#share .cont img { max-width: 70%; max-height: 200px; }
 #share .social.f { margin-top: 15px;  border-top: 1px solid #cccccc; text-align: center;}
-#share .social.tw {border: 0;}
+#share .social.tw {border: 0; padding-bottom: 70px;}
 
 
 #share .social .c { width: 80%;  overflow: hidden; margin: auto;}
-#share .social { width: 100%; text-align: center; border-bottom: 1px solid #cccccc; padding: 18px 0; }
+#share .social { width: 100%; text-align: center; border-bottom: 1px solid #cccccc; padding: 20px 0; }
 
 
 

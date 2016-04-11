@@ -13,6 +13,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
             $rootScope.image = localStorage.image;
   }
 
+   if (localStorage.imagebg) {
+            $rootScope.imagebg = localStorage.imagebg;
+  }
+
   if (localStorage.step) {
             $rootScope.step = localStorage.step;
   }

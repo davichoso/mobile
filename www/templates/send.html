@@ -286,11 +286,16 @@
                 <label class="item item-input" name="email">                
                     <input type="email" placeholder="E-MAIL">
                 </label>
+               <div class="s">
+                     <ion-toggle ng-model="f" toggle-class="toggle-energized" ng-checked="false" name="ok"></ion-toggle>
+                     <div class="a">
+                         I accept <a class="terms" ng-click='si()'>the terms and conditions</a>
+                     </div>
+               </div>
 
-                <ion-toggle toggle-class="toggle-energized" ng-checked="true" name="ok"> <span>I accept <a href="">the terms and conditions</a></span>   </ion-toggle>
             </form>    
             <div style="width:100%; text-align:center; margin-bottom: 80px; ">
-            <button id="send-button6" style="border-radius:25px 25px 25px 25px; width:200px;" class="button button-positive">SEND</button>
+            <a ng-href="#/share" id="send-button6" style="border-radius:25px 25px 25px 25px; width:200px;" class="button button-positive">SEND</a>
             </div>
             </div>        
         </section>
