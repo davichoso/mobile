@@ -13,22 +13,22 @@
             </div>
             <div class="center">
             <div class="cont">
-                    <img id="main" src="{{imagecopy?imagecopy:image}}">
-            </div>        
-            <form class="list">
+               <img id="main" src="{{imagecopy?imagecopy:image}}">
+            </div>
+            
+            <form class="list" name="formular" ng-submit="formu.$valid && formu.conditions && al()" novalidate>
                 <label class="item item-input" name="name">                
-                    <input type="text" placeholder="FIRST NAME">
+                    <input type="text" placeholder="FIRST NAME" ng-model='formu.names' required>
                 </label>
                 <label class="item item-input" name="surnames">                
-                    <input type="text" placeholder="LAST NAME">
+                    <input type="text" placeholder="LAST NAME" ng-model='formu.last' required>
                 </label>
-
                 <label class="item item-input" name="surnames">                
-                    <input type="text" placeholder="COMPANY">
+                    <input type="text" placeholder="COMPANY" ng-model='formu.company' required>
                 </label>
-
-                <label class="item item-select" name="country">
-                    <select>
+                <label class="item item-select" name="country" >
+                    <select ng-init="formu.country = ''" ng-model="formu.country" required>
+                    <option value="">Country</option>
                     <option value="ESP">Spain</option>
                     <option value="USA">United States</option>
                     <option value="AFG">Afghanistan</option>
@@ -284,19 +284,19 @@
                 </label>
 
                 <label class="item item-input" name="email">                
-                    <input type="email" placeholder="E-MAIL">
+                    <input type="email" placeholder="E-MAIL" ng-model='formu.email' required>
                 </label>
                <div class="s">
-                     <ion-toggle ng-model="f" toggle-class="toggle-energized" ng-checked="false" name="ok"></ion-toggle>
+                     <ion-toggle ng-model='formu.conditions' toggle-class="toggle-energized" ng-checked="false" name="ok" required>
+                     </ion-toggle>
                      <div class="a">
                          I accept <a class="terms" ng-click='si()'>the terms and conditions</a>
                      </div>
                </div>
-
-            </form>    
-            <div style="width:100%; text-align:center; margin-bottom: 80px; ">
-            <a ng-href="#/share" id="send-button6" style="border-radius:25px 25px 25px 25px; width:200px;" class="button button-positive">SEND</a>
-            </div>
+               <div style="width:100%; text-align:center; margin-bottom: 80px; ">
+               <button type="submit" id="send-button6" style="border-radius:25px 25px 25px 25px; width:200px;" class="button button-positive">SEND</button>                    
+               </div>
+            </form>             
             </div>        
         </section>
 

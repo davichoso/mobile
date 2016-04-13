@@ -190,11 +190,21 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $rootScope.sex = sex   
     }
 
-}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs) {
+}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http) {
+
+$scope.formu = {};
 
 if (!$rootScope.image) {
         $location.path("/camera");
 }
+
+$scope.al = function() {
+    $http.post("usuarios/recovery.json",$scope.formu).success(function(){}).error(function(){});
+    
+    $location.path("/share");
+
+ } 
+
 
 $scope.si = function() {
  $cordovaDialogs.confirm(
