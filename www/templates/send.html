@@ -15,8 +15,7 @@
             <div class="cont">
                <img id="main" src="{{imagecopy?imagecopy:image}}">
             </div>
-            
-            <form class="list" name="formular" ng-submit="alb()" novalidate>
+            <form class="list" name="formular" ng-submit="formular.$valid && formu.conditions && alb()" novalidate>
                 <input type="hidden" ng-model='formu.img'>
                 <label class="item item-input" name="name">                
                     <input type="text" placeholder="FIRST NAME" ng-model='formu.names' required>

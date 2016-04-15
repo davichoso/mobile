@@ -192,16 +192,25 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $rootScope.sex = sex   
     }
 
-}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http) {
+}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http,$location) {
 
 $scope.formu = {};
+
+if(!$rootScope.imagecopy)
+$rootScope.imagecopy=$rootScope.image;
 
 if (!$rootScope.image) {
         $location.path("/camera");
 }
 
 $scope.alb = function() {
-    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(){}).error(function(){});
+  $scope.formu.img = $rootScope.imagecopy;
+    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(v){
+
+      $rootScope.in=v
+      $location.path("/share")
+
+    }).error(function(){});
  } 
 
 
