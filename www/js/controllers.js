@@ -198,11 +198,8 @@ if (!$rootScope.image) {
         $location.path("/camera");
 }
 
-$scope.al = function() {
-    $http.post("usuarios/recovery.json",$scope.formu).success(function(){}).error(function(){});
-    
-    $location.path("/share");
-
+$scope.alb = function() {
+    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(){}).error(function(){});
  } 
 
 
