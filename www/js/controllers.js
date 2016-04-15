@@ -192,11 +192,18 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     $rootScope.sex = sex   
     }
 
-}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs) {
+}).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http) {
+
+$scope.formu = {};
 
 if (!$rootScope.image) {
         $location.path("/camera");
 }
+
+$scope.alb = function() {
+    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(){}).error(function(){});
+ } 
+
 
 $scope.si = function() {
  $cordovaDialogs.confirm(
