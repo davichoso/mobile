@@ -146,6 +146,8 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
 
 
     $rootScope.loading = false;  
+
+    if(!$rootScope.imagecopy)
     $rootScope.imagecopy = $rootScope.image;
     $rootScope.step = 3;
     localStorage.step = 3;
@@ -213,22 +215,44 @@ $scope.si = function() {
 
 
 
-}).controller("shareCtrl", function($scope, $rootScope,$cordovaSocialSharing) {
+}).controller("shareCtrl", function($scope, $rootScope,$cordovaSocialSharing,$cordovaDialogs) {
   if (!$rootScope.image) {
           $location.path("/camera");
   }
 
-  $scope.tw = function(){
-
+  $scope.fb = function(){
       $cordovaSocialSharing
-        .shareViaTwitter('', 'image', 'link')
+        .shareViaFacebook('Automatic message generated from the app',$rootScope.imagecopy)
         .then(function(result) {
           // Success!
         }, function(err) {
           // An error occurred. Show a message to the user
+          $cordovaDialogs.alert('Please install Facebook in you phone','Error')
         });
+  };
 
 
+  $scope.tw = function(){
+      $cordovaSocialSharing
+        .shareViaTwitter('Automatic message generated from the app',$rootScope.imagecopy)
+        .then(function(result) {
+          // Success!
+        }, function(err) {
+          $cordovaDialogs.alert('Please install Twitter in you phone','Error')
+          // An error occurred. Show a message to the user
+        });
+  };
+
+
+  $scope.in = function(){
+      $cordovaSocialSharing
+        .shareViaWhatsApp('Automatic message generated from the app',$rootScope.imagecopy)
+        .then(function(result) {
+          // Success!
+        }, function(err) {
+          $cordovaDialogs.alert('Please install LinkedIn in you phone','Error')
+          // An error occurred. Show a message to the user
+        });
   };
 
 
