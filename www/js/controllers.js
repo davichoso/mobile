@@ -1,6 +1,6 @@
 angular.module("app.controllers", []).controller("cameraCtrl", function($scope, $rootScope, $cordovaCamera, $cordovaImagePicker, $location, $q) {
-    $rootScope.step = 2;
-    localStorage.step = 2;
+$rootScope.loading = false;  
+
     $scope.takePicture = function() {
       $rootScope.loading = true;  
         document.addEventListener("deviceready", function() {
@@ -16,16 +16,12 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
                 
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                $rootScope.image = "data:image/jpeg;base64," + imageData;
-                localStorage.image = $rootScope.image;
-                localStorage.step = 3;
-                $rootScope.step = 3;
-                
                 $scope.imagencita("data:image/jpeg;base64," + imageData).then(
                   function(v){
-
                     $rootScope.imagebg = v;
-                    localStorage.imagebg = v;
+                    $rootScope.image = "data:image/jpeg;base64," + imageData;
+                    $rootScope.loading = false;  
+                    $rootScope.imagecopy = '';
                     $location.path("/filters"); 
                   },
                   function(v){})
@@ -51,16 +47,13 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
                 
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                $rootScope.image = "data:image/jpeg;base64," + imageData;
-                localStorage.image = $rootScope.image;
-                localStorage.step = 3;
-                $rootScope.step = 3
 
                 $scope.imagencita("data:image/jpeg;base64," + imageData).then(
                   function(v){
-
                     $rootScope.imagebg = v;
-                    localStorage.imagebg = v;
+                    $rootScope.image = "data:image/jpeg;base64," + imageData;
+                    $rootScope.loading = false;  
+                    $rootScope.imagecopy = '';
                     $location.path("/filters"); 
                   },
                   function(v){})
@@ -73,18 +66,18 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
     };
 
 
-    $scope.dodat = function(results) {
-        var q = $q.defer();
-        if (results) {
-            window.plugins.Base64.encodeFile(results[0], function(base64) {
-                q.resolve(base64);
-            });
-        } else {
-          $rootScope.loading = false;  
-            q.reject("NaN");
-        }
-        return q.promise;
-    };
+    // $scope.dodat = function(results) {
+    //     var q = $q.defer();
+    //     if (results) {
+    //         window.plugins.Base64.encodeFile(results[0], function(base64) {
+    //             q.resolve(base64);
+    //         });
+    //     } else {
+    //       $rootScope.loading = false;  
+    //         q.reject("NaN");
+    //     }
+    //     return q.promise;
+    // };
 
     $scope.imagencita = function(imagex) {
         var q = $q.defer();
@@ -114,33 +107,38 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
         
     };
 
-    $scope.takePicturefromlibrary = function() {
-      $rootScope.loading = true;  
-        var options = {
-            maximumImagesCount: 1,
-            width: 640,            
-            quality: 90
-        };
-        $cordovaImagePicker.getPictures(options).then(function(results) {
-            $scope.promise = $scope.dodat(results);
-            $scope.promise.then(function(v) {
-                $rootScope.image = v;
-                localStorage.image = $rootScope.image;
-                localStorage.step = 3;
-                $rootScope.step = 3;
+    // $scope.takePicturefromlibrary = function() {
+    //   $rootScope.loading = true;  
+    //     var options = {
+    //         maximumImagesCount: 1,
+    //         width: 640,            
+    //         quality: 90
+    //     };
+    //     $cordovaImagePicker.getPictures(options).then(function(results) {
+    //         $scope.promise = $scope.dodat(results);
+    //         $scope.promise.then(function(v) {
+    //             $rootScope.image = v;
+    //             localStorage.image = $rootScope.image;
+    //             localStorage.step = 3;
+    //             $rootScope.step = 3;
               
-                $location.path("/filters");
-            }, function(err) {
-                console.log("error");
-            });
-        }, function(error) {
-          $rootScope.loading = false;  
-        });
-    }
+    //             $location.path("/filters");
+    //         }, function(err) {
+    //             console.log("error");
+    //         });
+    //     }, function(error) {
+    //       $rootScope.loading = false;  
+    //     });
+    // }
 
 
 }).controller("filtersCtrl", function($scope, $rootScope, $location) {
     
+    if (!$rootScope.image) {
+        $location.path("/camera");
+    }
+
+    $rootScope.loading = false;  
     if(!$rootScope.sex)
       $rootScope.sex = 'w'
 
@@ -149,17 +147,17 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
 
     if(!$rootScope.imagecopy)
     $rootScope.imagecopy = $rootScope.image;
-    $rootScope.step = 3;
-    localStorage.step = 3;
-    if (!$rootScope.image) {
-        $location.path("/camera");
-    }
+
+    
     //////aca empieda
     $scope.selhand = "no";
 
 
     $scope.changehand = function(act,dir) {
+        
+        if(act!='no')
         var act = act+$rootScope.sex+dir
+
         $scope.selhand = act;
         var exif, transform = "none";
 ////////////////////////////////////////////////////////////////////////////
@@ -194,47 +192,56 @@ angular.module("app.controllers", []).controller("cameraCtrl", function($scope, 
 
 }).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http,$location) {
 
+if(localStorage.formu)
+$scope.formu=JSON.parse(localStorage.formu);
+else
 $scope.formu = {};
-
-if(!$rootScope.imagecopy)
-$rootScope.imagecopy=$rootScope.image;
 
 if (!$rootScope.image) {
         $location.path("/camera");
 }
 
 $scope.alb = function() {
+  $rootScope.loading = true;
+  localStorage.formu = JSON.stringify($scope.formu);
+
   $scope.formu.img = $rootScope.imagecopy;
     $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(v){
-
-      $rootScope.in=v
+      $rootScope.loading = false;  
+      $rootScope.idtoshare=v
       $location.path("/share")
 
-    }).error(function(){});
- } 
+    }).error(function(){$rootScope.loading = false;  });
+} 
 
 
 $scope.si = function() {
  $cordovaDialogs.confirm(
-'Your participation in "SAP Business One Around the World"  is subject to the SAP privacy statements. By selecting the "I agree" button you consent to the collection of your personal data and pictures. Your data will be processed and hosted by involvement of the following third party provider: Tasman Graphics, located in General Ramírez de Madrid, Bajo D - 28028 Madrid, Spain. Such consent includes that SAP may collect, store and process any personal data voluntarily provided by you on this App concerning only "SAP Business One Around the World" matters. Your pictures may be shared in SAP Business One social media channels (Facebook, Twitter and LinkedIn). If you do not wish to continue, do not select "I agree”.'
+'Your participation in "SAP Business One Around the World" is subject to the SAP privacy statements. By selecting the "I agree" button you consent to the collection of your personal data and pictures. Your data will be processed and hosted by involvement of the following third party provider: Tasman Graphics, located in General Ramírez de Madrid, Bajo D - 28028 Madrid, Spain. Such consent includes that SAP may collect, store and process any personal data voluntarily provided by you on this App concerning only "SAP Business One Around the World" matters. Your pictures may be shared in SAP Business One social media channels (Facebook, Twitter and LinkedIn). If you do not wish to continue, do not select "I agree”.'
 ,"Terms and Conditions",["Accept","Decline"])
  .then(function(buttonIndex) {
      if(buttonIndex==1)
-     $scope.f=true
+     $scope.formu.conditions=true
       else
-     $scope.f=false
+     $scope.formu.conditions=false
 
     });
 }
 
 }).controller("homeCtrl", function($scope, $rootScope) {
-
+$rootScope.loading = false;  
 
 
 }).controller("shareCtrl", function($scope, $rootScope,$cordovaSocialSharing,$cordovaDialogs) {
   if (!$rootScope.image) {
           $location.path("/camera");
   }
+
+
+  $scope.lin = function(){
+    window.open('https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Ftasman.es%2Fclientes%2Fgalleryvoting%2Fshare%2Findex.php%3Fp%3D' + $rootScope.idtoshare + '&title=SAP%20AROUND%20THE%20WORD&summary=Take%20a%20picture%20of%20a%20recognizable%20landmark%20in%20your%20city%20or%20country%2C%20add%20a%20card%20frame%20and%20take%20part%20of%20a%20worldwide%20experience.%20SAP%20will%20donate%201%20Euro%20to%20the%20building%20of%20a%20SAP%20Business%20One%20kitchen%20for%20orphaned%20children%20in%20Kampala%2C%20Uganda%20for%20each%20shared%20picture&source=app', '_blank', 'location=yes')
+  };
+
 
   $scope.fb = function(){
       $cordovaSocialSharing
@@ -243,7 +250,11 @@ $scope.si = function() {
           // Success!
         }, function(err) {
           // An error occurred. Show a message to the user
-          $cordovaDialogs.alert('Please install Facebook in you phone','Error')
+// https://www.facebook.com/sharer/sharer.php?u=
+          if($rootScope.idtoshare)
+          window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftasman.es%2Fclientes%2Fgalleryvoting%2Fshare%2Findex.php%3Fp%3D' + $rootScope.idtoshare , '_blank', 'location=yes')
+          else
+          $cordovaDialogs.alert('Please install Facebook in you phone or send the photo in the previous step','Error')
         });
   };
 
@@ -254,7 +265,11 @@ $scope.si = function() {
         .then(function(result) {
           // Success!
         }, function(err) {
-          $cordovaDialogs.alert('Please install Twitter in you phone','Error')
+
+           if($rootScope.idtoshare)
+          window.open('https://mobile.twitter.com/compose/tweet?status=http%3A//tasman.es/clientes/galleryvoting/share/index.php%3Fp%3D' + $rootScope.idtoshare , '_blank', 'location=yes')
+           else
+           $cordovaDialogs.alert('Please install Twitter in your phone','Error')
           // An error occurred. Show a message to the user
         });
   };

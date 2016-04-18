@@ -12,11 +12,11 @@
 			<div class="flaticon-signs"></div>					
 			<h2>FILTERS</h2>							
 		<a/>
-		<a class="navitem {{state=='send' ? 'current':(state=='filters' || state=='camera'?'disabled':'')}}" ng-href="{{image && (state=='filters' || state=='share')? '#/send':'#'}}">
+		<a class="navitem {{state=='send' ? 'current':(state=='filters' || state=='camera'?'disabled':'')}}" ng-href="{{image && (state=='filters' || state=='share')? '#/send':'#'}}" ng-class="state=='filters'?'green':''">
 			<i class="flaticon-paper"></i>			
 			<h2>SEND</h2>							
 		</a>
-		<a class="navitem {{state=='share'?'current':'disabled'}}" ng-href="{{(image && state=='send')?'#/share':'#'}}">
+		<a class="navitem {{state=='share'?'current':'disabled'}}" ng-href="{{(image && state=='send' && idtoshare)?'#/share':'#'}}">
 			<i class="flaticon-social"></i>			
 			<h2>SHARE</h2>							
 		</a>

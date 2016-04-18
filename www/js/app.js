@@ -9,22 +9,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 .run(['$ionicPlatform','$rootScope','$location',function($ionicPlatform,$rootScope,$location) {
   
-  if (localStorage.image) {
-            $rootScope.image = localStorage.image;
-  }
 
-   if (localStorage.imagebg) {
-            $rootScope.imagebg = localStorage.imagebg;
-  }
 
-  if (localStorage.step) {
-            $rootScope.step = localStorage.step;
-  }
-  else
-  {
-    $rootScope.step = 1;
-    localStorage.step = 1;
-  }
+ 
 
 
   $ionicPlatform.ready(function() {

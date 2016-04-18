@@ -27,7 +27,7 @@
                 </div>
                 <div ng-class="{'active':selhand === 'no'}" ng-click="changehand('no')">
                     <div class="cont nothing">                       	   
-                        <img src="img/marco.png" style="height:100%">
+                        <img src="img/marco.png" class="marco">
                     </div>
                 </div>
                 <div sex={{sex}} ng-class="{'active':selhand === 'w'+sex+'r'}" ng-click="changehand('w','r')">
@@ -70,6 +70,20 @@
             </div>
         </section>
         <navbar></navbar>
+        <div style="display:none">
+            <img src="img/bml.png">
+            <img src="img/bwl.png">
+            <img src="img/iml.png">
+            <img src="img/iwl.png">
+            <img src="img/wml.png">
+            <img src="img/wwl.png">
+            <img src="img/bmr.png">
+            <img src="img/bwr.png">
+            <img src="img/imr.png">
+            <img src="img/iwr.png">
+            <img src="img/wmr.png">
+            <img src="img/wwr.png">
+        </div>
     </ion-content>
 </ion-view>
 
