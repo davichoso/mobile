@@ -16,12 +16,13 @@ $rootScope.loading = false;
                 
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
+              $rootScope.imagecopy = false;
                 $scope.imagencita("data:image/jpeg;base64," + imageData).then(
                   function(v){
                     $rootScope.imagebg = v;
                     $rootScope.image = "data:image/jpeg;base64," + imageData;
                     $rootScope.loading = false;  
-                    $rootScope.imagecopy = '';
+                    $rootScope.imagecopy = false;
                     $location.path("/filters"); 
                   },
                   function(v){})
@@ -48,12 +49,14 @@ $rootScope.loading = false;
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
 
+              $rootScope.imagecopy = false;
+
                 $scope.imagencita("data:image/jpeg;base64," + imageData).then(
                   function(v){
                     $rootScope.imagebg = v;
                     $rootScope.image = "data:image/jpeg;base64," + imageData;
                     $rootScope.loading = false;  
-                    $rootScope.imagecopy = '';
+                    $rootScope.imagecopy = false;
                     $location.path("/filters"); 
                   },
                   function(v){})
@@ -192,21 +195,20 @@ $rootScope.loading = false;
 
 }).controller("sendCtrl", function($scope, $rootScope,$cordovaDialogs,$http,$location) {
 
-if(localStorage.formu)
-$scope.formu=JSON.parse(localStorage.formu);
-else
-$scope.formu = {};
+
 
 if (!$rootScope.image) {
         $location.path("/camera");
 }
 
+
+
 $scope.alb = function() {
   $rootScope.loading = true;
-  localStorage.formu = JSON.stringify($scope.formu);
+  localStorage.formul = JSON.stringify($rootScope.formu);
 
-  $scope.formu.img = $rootScope.imagecopy;
-    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$scope.formu).success(function(v){
+  $rootScope.formu.img = $rootScope.imagecopy;
+    $http.post("http://www.tasman.es/clientes/galleryvoting/data/get.php",$rootScope.formu).success(function(v){
       $rootScope.loading = false;  
       $rootScope.idtoshare=v
       $location.path("/share")

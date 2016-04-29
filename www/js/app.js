@@ -11,7 +11,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   
 
 
- 
+if(localStorage.formul)
+$rootScope.formu=JSON.parse(localStorage.formul);
+else
+$rootScope.formu = {};
 
 
   $ionicPlatform.ready(function() {

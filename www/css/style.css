@@ -138,10 +138,13 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #loader img {
-    margin-top: 55%;
+    
 }
 
 #hiddenImage {
@@ -296,7 +299,7 @@ body {
 }
 
 #navbar a.navitem.disabled.green {
-    background-color: #00bc00;
+    background-color: #008FD3;
 }
 
 #navbar a.navitem.disabled.green h2,
@@ -642,6 +645,10 @@ body {
     font-family: 'BentonSans-Regular';
     font-size: 15px;
 }
+#send .body .center form input.ng-invalid.ng-touched {
+    border-bottom: solid 1px #cc1517;
+    box-shadow: 0px 3px 4px -2px rgba(204,21,23,1);
+}
 
 #send .body .center form .item-select {
     margin-top: 5px;
@@ -694,6 +701,10 @@ body {
 
 #send .body .center .button.button-positive {
     background-color: #0076cb;
+}
+
+#send .body .center .button.button-positive.activated {
+    background-color: #003283;
 }
 
 #send .body .center .s {
@@ -752,6 +763,16 @@ body {
     border-color: #f0ab00;
 }
 
+#send .body .center .err {
+    border: 1px solid #cc1517;
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0;
+    color: #cc1517;
+    margin-left: 15px;
+    font-family: 'BentonSans-Regular';
+    font-size: 12px;
+}
 
 /*///////// share //////////*/
 
@@ -1037,7 +1058,7 @@ body {
         margin-bottom: 50px;
     }
     #home .body .h80p p {
-        line-height: 50px;
+        line-height: 45px;
         font-size: 25px;
     }
     #home .body .h80p .flex > div {
