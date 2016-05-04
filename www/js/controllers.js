@@ -247,7 +247,7 @@ $rootScope.loading = false;
 
   $scope.fb = function(){
       $cordovaSocialSharing
-        .shareViaFacebook('Automatic message generated from the app',$rootScope.imagecopy)
+        .shareViaFacebook('#SAPBusinessOne',$rootScope.imagecopy)
         .then(function(result) {
           // Success!
         }, function(err) {
@@ -263,7 +263,7 @@ $rootScope.loading = false;
 
   $scope.tw = function(){
       $cordovaSocialSharing
-        .shareViaTwitter('Automatic message generated from the app',$rootScope.imagecopy)
+        .shareViaTwitter('#SAPBusinessOne',$rootScope.imagecopy)
         .then(function(result) {
           // Success!
         }, function(err) {
@@ -279,7 +279,7 @@ $rootScope.loading = false;
 
   $scope.in = function(){
       $cordovaSocialSharing
-        .shareViaWhatsApp('Automatic message generated from the app',$rootScope.imagecopy)
+        .shareViaWhatsApp('#SAPBusinessOne',$rootScope.imagecopy)
         .then(function(result) {
           // Success!
         }, function(err) {
